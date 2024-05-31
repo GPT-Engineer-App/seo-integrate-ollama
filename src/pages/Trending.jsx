@@ -10,9 +10,15 @@ const Trending = () => {
     const fetchTrendingTopics = async () => {
       setLoading(true);
       try {
-        const response = await fetch("https://api.ollama.com/trending");
+        const response = await fetch("https://api.ollama.com/trending", {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+        });
         if (!response.ok) {
-          throw new Error("Failed to fetch trending topics");
+          const errorText = await response.text();
+          throw new Error(`Failed to fetch trending topics: ${errorText}`);
         }
         const data = await response.json();
         setTrendingTopics(data);
