@@ -11,6 +11,9 @@ const Navigation = () => {
         <Link as={NavLink} to="/trending" activeClassName="active" color="white">
           Trending
         </Link>
+        <Link as={NavLink} to="/notes" activeClassName="active" color="white">
+          Notes
+        </Link>
       </Flex>
     </Box>
   );
