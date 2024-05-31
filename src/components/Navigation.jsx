@@ -1,21 +1,19 @@
-import { Box, Flex, Link } from "@chakra-ui/react";
+import { VStack, Link } from "@chakra-ui/react";
 import { NavLink } from "react-router-dom";
 
 const Navigation = () => {
   return (
-    <Box bg="teal.500" p={4}>
-      <Flex justify="space-around">
-        <Link as={NavLink} to="/" exact activeClassName="active" color="white">
-          Home
-        </Link>
-        <Link as={NavLink} to="/trending" activeClassName="active" color="white">
-          Trending
-        </Link>
-        <Link as={NavLink} to="/notes" activeClassName="active" color="white">
-          Notes
-        </Link>
-      </Flex>
-    </Box>
+    <VStack spacing={4} align="stretch">
+      <Link as={NavLink} to="/" exact activeClassName="active" color="white">
+        Home
+      </Link>
+      <Link as={NavLink} to="/trending" activeClassName="active" color="white">
+        Trending
+      </Link>
+      <Link as={NavLink} to="/notes" activeClassName="active" color="white">
+        Notes
+      </Link>
+    </VStack>
   );
 };
 

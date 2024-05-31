@@ -63,7 +63,7 @@ const Index = () => {
           <option value="model1">Model 1</option>
           <option value="model2">Model 2</option>
         </Select>
-        <Slider defaultValue={30} min={0} max={100} step={1} onChange={(val) => setTemperature(val)}>
+        <Slider defaultValue={0.1} min={0.1} max={3} step={0.5} onChange={(val) => setTemperature(val)}>
           <SliderTrack>
             <SliderFilledTrack />
           </SliderTrack>
@@ -74,7 +74,7 @@ const Index = () => {
           <option value="model1">Model 1</option>
           <option value="model2">Model 2</option>
         </Select>
-        <Slider defaultValue={30} min={0} max={100} step={1} onChange={(val) => setTemperature(val)}>
+        <Slider defaultValue={0.1} min={0.1} max={3} step={0.5} onChange={(val) => setTemperature(val)}>
           <SliderTrack>
             <SliderFilledTrack />
           </SliderTrack>
