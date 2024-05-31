@@ -69,18 +69,7 @@ const Index = () => {
           </SliderTrack>
           <SliderThumb />
         </Slider>
-        <Input placeholder="Enter prompt" value={prompt} onChange={(e) => setPrompt(e.target.value)} />
-        <Select placeholder="Select AI Model" onChange={(e) => setModel(e.target.value)}>
-          <option value="model1">Model 1</option>
-          <option value="model2">Model 2</option>
-        </Select>
-        <Slider defaultValue={0.1} min={0.1} max={3} step={0.5} onChange={(val) => setTemperature(val)}>
-          <SliderTrack>
-            <SliderFilledTrack />
-          </SliderTrack>
-          <SliderThumb />
-        </Slider>
-        <Input placeholder="Enter prompt" value={prompt} onChange={(e) => setPrompt(e.target.value)} />
+        <Input placeholder="Enter your search query" value={query} onChange={(e) => setQuery(e.target.value)} />
         <Button leftIcon={<FaSearch />} colorScheme="teal" onClick={handleSearch} isLoading={loading}>
           Search
         </Button>
