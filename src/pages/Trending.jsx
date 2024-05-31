@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Container, VStack, Text, Box, Spinner, useToast } from "@chakra-ui/react";
+import { Container, VStack, Text, Box, Spinner, useToast, Input, Button } from "@chakra-ui/react";
 
 const Trending = () => {
   const [loading, setLoading] = useState(false);

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Container, VStack, Text, Input, Button, Box, Spinner, useToast, IconButton } from "@chakra-ui/react";
+import { Container, VStack, Text, Input, Button, Box, Spinner, useToast, IconButton, Select, Slider, SliderTrack, SliderFilledTrack, SliderThumb } from "@chakra-ui/react";
 import { FaSearch } from "react-icons/fa";
 
 const Index = () => {
