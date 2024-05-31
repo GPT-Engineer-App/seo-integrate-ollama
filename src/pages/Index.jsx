@@ -5,6 +5,9 @@ import { FaSearch } from "react-icons/fa";
 const Index = () => {
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(false);
+  const [model, setModel] = useState("");
+  const [temperature, setTemperature] = useState(30);
+  const [prompt, setPrompt] = useState("");
   const [results, setResults] = useState(null);
   const toast = useToast();
 
@@ -56,6 +59,28 @@ const Index = () => {
       <VStack spacing={4} width="100%">
         <Text fontSize="2xl">SEO Interface with Ollama Integration</Text>
         <Input placeholder="Enter your search query" value={query} onChange={(e) => setQuery(e.target.value)} />
+        <Select placeholder="Select AI Model" onChange={(e) => setModel(e.target.value)}>
+          <option value="model1">Model 1</option>
+          <option value="model2">Model 2</option>
+        </Select>
+        <Slider defaultValue={30} min={0} max={100} step={1} onChange={(val) => setTemperature(val)}>
+          <SliderTrack>
+            <SliderFilledTrack />
+          </SliderTrack>
+          <SliderThumb />
+        </Slider>
+        <Input placeholder="Enter prompt" value={prompt} onChange={(e) => setPrompt(e.target.value)} />
+        <Select placeholder="Select AI Model" onChange={(e) => setModel(e.target.value)}>
+          <option value="model1">Model 1</option>
+          <option value="model2">Model 2</option>
+        </Select>
+        <Slider defaultValue={30} min={0} max={100} step={1} onChange={(val) => setTemperature(val)}>
+          <SliderTrack>
+            <SliderFilledTrack />
+          </SliderTrack>
+          <SliderThumb />
+        </Slider>
+        <Input placeholder="Enter prompt" value={prompt} onChange={(e) => setPrompt(e.target.value)} />
         <Button leftIcon={<FaSearch />} colorScheme="teal" onClick={handleSearch} isLoading={loading}>
           Search
         </Button>

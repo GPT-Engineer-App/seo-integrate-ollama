@@ -4,6 +4,7 @@ import { Container, VStack, Text, Box, Spinner, useToast, Input, Button } from "
 const Trending = () => {
   const [loading, setLoading] = useState(false);
   const [trendingTopics, setTrendingTopics] = useState([]);
+  const [searchQuery, setSearchQuery] = useState("");
   const toast = useToast();
 
   useEffect(() => {
@@ -42,6 +43,15 @@ const Trending = () => {
     <Container centerContent maxW="container.md" height="100vh" display="flex" flexDirection="column" justifyContent="center" alignItems="center">
       <VStack spacing={4} width="100%">
         <Text fontSize="2xl">Trending Topics</Text>
+        <Input placeholder="Search trending topics" value={searchQuery} onChange={(e) => setSearchQuery(e.target.value)} />
+        <Button
+          onClick={() => {
+            const filteredTopics = trendingTopics.filter((topic) => topic.toLowerCase().includes(searchQuery.toLowerCase()));
+            setTrendingTopics(filteredTopics);
+          }}
+        >
+          Search
+        </Button>
         {loading && <Spinner />}
         {!loading && trendingTopics.length > 0 && (
           <Box width="100%" p={4} borderWidth={1} borderRadius="lg">
