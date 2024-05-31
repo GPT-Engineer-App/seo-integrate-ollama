@@ -69,7 +69,7 @@ const Index = () => {
           </SliderTrack>
           <SliderThumb />
         </Slider>
-        <Input placeholder="Enter your search query" value={query} onChange={(e) => setQuery(e.target.value)} />
+        <Input placeholder="Select Prompt" value={prompt} onChange={(e) => setPrompt(e.target.value)} />
         <Button leftIcon={<FaSearch />} colorScheme="teal" onClick={handleSearch} isLoading={loading}>
           Search
         </Button>
